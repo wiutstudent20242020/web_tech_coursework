@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: 'Lato', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.nav-container {
+  background-color: #add8e6;
+  height: 650px;
+  border: 2px solid #00f;
+  /* padding: 20px; */
+}
+
+.nav-container a {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  padding: 5px 15px;
+  margin: 5px 10px;
+  border: 2px solid #00f;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.intro {
+  background-color: pink;
+  border: 2px solid #00f;
+  border-left: none;
+  width: 800px;
+}
+.introo {
+  background-color: #f00;
+  color: #fff;
+  padding: 5px;
+}
+.welcome {
+  font-size: 1.7rem;
+  text-align: center;
+  margin-top: 250px;
+}
+.notesCont {
+  background-color: #ffc0cb;
+  border: 2px solid #00f;
+  border-left: none;
+  width: 800px;
+}
+h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin: 15px 0;
+  text-transform: uppercase;
+}
+.taskItem {
+  background-color: #ebd9d9;
+  margin: 10px;
+  padding: 10px;
+}

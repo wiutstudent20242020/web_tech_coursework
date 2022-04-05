@@ -1,0 +1,12 @@
+extends layout.pug 
+block Content
+    .archivednotes
+        h2 Archived notes
+        .notesList
+            if notes.length
+                each note in notes
+                    p.notesItems #{note.description}
+                        a.btnDeleteCompleted(href=`/notes/${note.id}/deletearchived`) Delete
+                        a.btnArchive(href=`/notes/${note.id}/unarchive`) Unarchive
+            else
+                p There is no notes completed
