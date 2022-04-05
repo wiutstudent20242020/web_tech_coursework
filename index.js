@@ -67,5 +67,22 @@ db.all('select * FROM notes WHERE archived = 0', [], (err, rows) => {
   console.log(rows);
 });
 //////////////////////////////////////////
+// deleting unarchived note
+app.get('/notes/:id/deleteunarchived', (req, res) => {
+  id = req.params.id;
+  db.run('DELETE FROM notes WHERE id=?', id, (err) => {
+    if (err) console.log(err.message);
+    res.redirect('/notes');
+  });
+});
+
+// deleting completed note
+app.get('/notes/:id/deleteunarchived', (req, res) => {
+  db.run('DELETE FROM notes WHERE id=?', req.params.id, (err) => {
+    if (err) console.log(err.message);
+
+    res.redirect('/notes');
+  });
+});
 
 app.listen(3000);
