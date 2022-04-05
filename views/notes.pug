@@ -5,10 +5,10 @@ block Content
         .notesList
             if (notes.length !== 0)
                 each note in notes
-                    p.taskItem #{note.description}
-                        //- span.buttons
-                        a.btnEdit(href=`/notes/${note.id}/update`) Edit 
-                        a.btnDelete(href=`/notes/${note.id}/deleteunarchived`) Delete
-                        a.btnDone(href=`/notes/${note.id}/archive`) Archive
+                    p.noteItem #{note.description}
+                        span.buttons
+                            a.btnEdit(href=`/notes/${note.id}/update`) Edit 
+                            a.btnDelete(href=`/notes/${note.id}/deleteunarchived`) Delete
+                            a.btnArchive(href=`/notes/${note.id}/archive`) Archive
             else
                 p You do not have any notes yet...

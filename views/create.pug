@@ -1,10 +1,9 @@
 extends layout.pug
 block Content
     .createCont
-        if success 
-            p.success New note created succesfully!
-        if error 
-            p.error Please Fill the Form
+        h2 Create new note
+        if fail 
+            p.fail Please Fill the Form! Note cannot be empty
         form.addForm(action="/create", method="post")
             input.addInput(type="text" name = "note")
             button.btnAdd Add new note

@@ -1,8 +1,9 @@
 extends layout
 block Content 
-    .updateContainer
-        if error 
-            p.error Input cannot be empty...
-        form(action = `/notes/${id}/update`, method="post")
-            input(type="text" name='note' value = `${note.description}`)
+    .editCont
+        h2 Update your note
+        if fail 
+            p.fail Input cannot be empty...        
+        form.editForm(action = `/notes/${id}/update`, method="post")
+            input.editInput(type="text" name='note' value = `${note.description}`)
             button.btnUpdate Update
