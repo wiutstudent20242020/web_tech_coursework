@@ -33,4 +33,39 @@ app.get('/notes', (req, res) => {
   });
 });
 
+// adding a new note
+app.get('/create', (req, res) => {
+  res.render('create');
+});
+app.post('/create', (req, res) => {
+  const userInput = req.body;
+
+  if (userInput.note.length === 0) {
+    res.render('create', { notes: rows, error: true });
+  } else {
+    db.run(
+      'insert into notes(description, archived) values (?, 0)',
+      [userInput.note],
+      (err) => {
+        if (err) console.log(err.message);
+
+        console.log('New note added');
+
+        db.all('select * FROM notes WHERE archived = 0', [], (err, rows) => {
+          if (err) console.log(err.message);
+
+          res.render('notes', { notes: rows });
+        });
+      }
+    );
+  }
+});
+//////////////////////////////////////////
+db.all('select * FROM notes WHERE archived = 0', [], (err, rows) => {
+  if (err) console.log(err.message);
+
+  console.log(rows);
+});
+//////////////////////////////////////////
+
 app.listen(3000);
